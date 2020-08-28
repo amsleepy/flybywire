@@ -1,8 +1,6 @@
-
 import java.util.Scanner;
 
-public class main {
-
+public class TempConvertMain {
 
     static int flag;
 
