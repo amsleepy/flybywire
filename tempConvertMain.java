@@ -31,6 +31,8 @@ public class main {
 
         TempConversion(deg, flag);
 
+        key.close();
+
     }
 
 }
