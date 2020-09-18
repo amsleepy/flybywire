@@ -54,7 +54,10 @@ public class Benchmarking {
             System.out.println("List maximum = " + max + "\n");
 
             start = System.nanoTime();  //start time for median
-            int med = num.get(num.size()/2);
+            double med = num.get(num.size()/2);
+            if (num.size() % 2 == 0) {
+                med = (med + (num.get((num.size()/2) + 1)))/2;
+            }
             end = System.nanoTime();    //end time for median
             System.out.println("Median found in " + (end - start)/1000 + " microseconds.");
             System.out.println("List median = " + med + "\n");
