@@ -20,13 +20,12 @@ public class Benchmarking {
         String filename = keys.nextLine();
         System.out.println();
 
-        long start = System.nanoTime();
+        long start = System.nanoTime();   //start time for sort/insert
 
         try { 
 
             read = new BufferedReader(new FileReader(filename));
-
-            while (read.readLine() != null) {
+            while (read.readLine() != null) {   //sort/insert occurs in this loop
 
                 String insert = read.readLine();
                 num.add(Integer.parseInt(insert));
@@ -34,7 +33,7 @@ public class Benchmarking {
 
             }
 
-            long end = System.nanoTime();
+            long end = System.nanoTime();   //end time for sort/insert
 
             System.out.println("Values inserted in " + (end - start)/1000000 + " milliseconds.");
             System.out.println("----------------------------------------------");
@@ -42,24 +41,23 @@ public class Benchmarking {
 
             System.out.println();
 
-            start = System.nanoTime();
+            start = System.nanoTime();  //start time for min
             int min = num.get(0);
-            end = System.nanoTime();
+            end = System.nanoTime();    //end time for min
             System.out.println("Minimum found in " + (end - start)/1000 + " microseconds.");
             System.out.println("List minimum = " + min + "\n");
 
-            start = System.nanoTime();
+            start = System.nanoTime();  //start time for max
             int max = num.getLast();
-            end = System.nanoTime();
+            end = System.nanoTime();    //end time for max
             System.out.println("Maximum found in " + (end - start)/1000 + " microseconds.");
             System.out.println("List maximum = " + max + "\n");
 
-            start = System.nanoTime();
+            start = System.nanoTime();  //start time for median
             int med = num.get(num.size()/2);
-            end = System.nanoTime();
+            end = System.nanoTime();    //end time for median
             System.out.println("Median found in " + (end - start)/1000 + " microseconds.");
             System.out.println("List median = " + med + "\n");
-
 
 
         } catch (FileNotFoundException f) {
@@ -67,7 +65,6 @@ public class Benchmarking {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-
             try {
                 if (read != null) {
                     read.close();
