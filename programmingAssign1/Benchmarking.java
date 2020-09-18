@@ -55,7 +55,7 @@ public class Benchmarking {
 
             start = System.nanoTime();  //start time for median
             double med = num.get(num.size()/2);
-            if (num.size() % 2 == 0) {
+            if (num.size() % 2 == 0) {  //calculates middle value in case size of list is even and lacks a single median index number
                 med = (med + (num.get((num.size()/2) + 1)))/2;
             }
             end = System.nanoTime();    //end time for median
